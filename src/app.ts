@@ -1,3 +1,4 @@
+
 import httpStatus  from 'http-status-codes';
 
 import express, { NextFunction, request, Request, response, Response } from "express";
@@ -15,15 +16,24 @@ app.use(cors())
 
 app.use("/api/v1", router)
 
+
+import express, { Request, Response } from "express";
+
+
+const app = express();
+
+
 app.get("/", (req: Request, res: Response)=>{
     res.status(200).json({
         message: "Welcome to Tour Management System Backend"
     })
 })
 
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use(globalErrorHandler)
 
 app.use(notFound);
+
 
 export default app;
